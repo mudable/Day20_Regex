@@ -17,6 +17,7 @@ public class UserRegistration {
 		userRegistration.lastName();
 		userRegistration.email();
 		userRegistration.contactNumber();
+		userRegistration.password1();
 	}
 
 //User's First Name
@@ -64,6 +65,19 @@ public class UserRegistration {
 			System.out.println("Thank you");
 		} else {
 			System.out.println("enter valid contact number");
+		}
+	}
+
+	public void password1() {
+		// rule1 = minimum 8 characters
+		sc = new Scanner(System.in);
+		System.out.print("Enter password  :: ");
+		String password = sc.nextLine();
+		boolean answer = Pattern.matches("[a-zA-Z0-9]{8,}", password);
+		if (answer) {
+			System.out.println("Thank you");
+		} else {
+			System.out.println("enter valid password");
 		}
 	}
 }
