@@ -20,6 +20,7 @@ public class UserRegistration {
 		userRegistration.password1();
 		userRegistration.password3();
 		userRegistration.password4();
+		userRegistration.emailValidation();
 	}
 
 //User's First Name
@@ -103,6 +104,19 @@ public class UserRegistration {
 		System.out.print("Enter password  :: ");
 		String password = sc.nextLine();
 		boolean answer = Pattern.matches("[A-Za-z0-9]{8,}+[!@#$%^&*+-|'~`,<>.?_]{1}", password);
+		if (answer) {
+			System.out.println("Thank you");
+		} else {
+			System.out.println("enter valid password");
+		}
+	}
+
+	public void emailValidation() {
+		// Validate the given email IDs in sheet
+		sc = new Scanner(System.in);
+		System.out.print("Enter email ID :: ");
+		String Email = sc.next();
+		Boolean answer = Pattern.matches("[a-zA-Z0-9_.]*[-]*[+]*[a-zA-Z0-9]*@[a-zA-Z0-9]+([.][a-zA-Z]+)+", Email);
 		if (answer) {
 			System.out.println("Thank you");
 		} else {
